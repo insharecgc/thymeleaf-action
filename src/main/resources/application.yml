@@ -8,3 +8,7 @@ spring:
 #    hibernate:
 #      ddl-auto: update
     show-sql: true
+  thymeleaf:
+    encoding: UTF-8
+    cache: false
+    mode: HTML5

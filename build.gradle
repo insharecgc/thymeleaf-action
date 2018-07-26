@@ -41,8 +41,5 @@ dependencies {
 	// 添加 MySQL连接驱动 的依赖
 	compile('mysql:mysql-connector-java:6.0.5')
 
-	// https://mvnrepository.com/artifact/org.mybatis/mybatis
-	compile group: 'org.mybatis', name: 'mybatis', version: '3.4.1'
-
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
