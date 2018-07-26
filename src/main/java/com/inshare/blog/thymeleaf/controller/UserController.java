@@ -33,24 +33,24 @@ public class UserController {
     }
 
     /**
-     * 表单页面
+     * 创建用户
      * @param model
      * @return
      */
-    @GetMapping("/form")
-    public ModelAndView form(Model model) {
+    @GetMapping("/create")
+    public ModelAndView create(Model model) {
         model.addAttribute("user", new User());
         model.addAttribute("title", "创建用户");
         return new ModelAndView("users/form", "userModel", model);
     }
 
     /**
-     * 创建用户
+     * 提交创建或保存用户
      * @param user
      * @return
      */
     @PostMapping
-    public ModelAndView create(User user) {
+    public ModelAndView save(User user) {
         user = userService.saveOrUpdateUser(user);
         return new ModelAndView("redirect:/users");
     }
@@ -63,6 +63,12 @@ public class UserController {
         return new ModelAndView("users/list", "userModel", model);
     }
 
+    /**
+     * 需改用户
+     * @param id
+     * @param model
+     * @return
+     */
     @GetMapping("/modify/{id}")
     public ModelAndView modify(@PathVariable("id") Integer id, Model model) {
         User user = userService.getUserById(id);
